@@ -2,20 +2,29 @@
 
 [345, 897, 568, 234] -> 2 */
 
-Random rnd = new Random();
+int n, sum1 = 0;
+Random rand = new Random();
+int[] a;
 
-int num = rnd.Next(100, 999);
-int num1 = rnd.Next(100, 999);
-int num2 = rnd.Next(100, 999);
-int num3 = rnd.Next(100, 999);
-
-int[] mas = {num, num1, num2, num3};
+{
+    Console.Write("Введите размер массива: ");
+    n = int.Parse(Console.ReadLine());
+    a = new int[n];
+    Console.Clear();
+    Console.WriteLine("Нарандомленный массив:");
+    for (int i = 0; i < n; i++)
+    {
+        a[i] = rand.Next(0, 100);
+        Console.Write("{0,5}", a[i]);
+    }
+    Console.WriteLine();
+}
 
 int count = 0;
-for (int i = 0; i < mas.Length; i++)
+for (int i = 0; i < n; i++)
 {
-    if (mas[i] % 2 == 0)
+    if (a[i] % 2 == 0)
         count++;
 }
-Console.WriteLine($"{num}, {num1}, {num2}, {num3}");
+
 Console.WriteLine("Из рандомных чисел {0} четные", count);
